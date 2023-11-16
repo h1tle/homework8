@@ -36,7 +36,7 @@ body {
 
 body {
   line-height: 1;
-  font-family: "";
+  font-family: '';
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -45,7 +45,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "";
+  font-family: '';
 }
 
 input::-ms-clear {
@@ -94,7 +94,6 @@ body {
 }
 
 body {
-  background-color: #e8e8e8;
 } /*# sourceMappingURL=null.css.map */
 /*************************************************************/
 
@@ -109,18 +108,17 @@ body {
 }
 
 .header {
-  background-color: #d9d9d9;
+  background-color: #eeeff1;
+  max-height: 700px;
   font-size: 16px;
 }
 .header__title {
   font-size: 48px;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
   margin-bottom: 60px;
 }
 .header__text {
-  line-height: 30px;
-  max-width: 540px;
+  max-width: 547px;
+  line-height: 24px;
   color: #727272;
   margin-bottom: 65px;
 }
@@ -140,8 +138,9 @@ body {
 .button {
   background-color: #34547a;
   color: white;
-  padding: 20px;
   margin-bottom: 141px;
+  min-width: 225px;
+  min-height: 65px;
 }
 
 .active {
@@ -167,8 +166,8 @@ body {
   justify-content: space-between;
 }
 .project__body::before {
-  content: "";
-  background-image: url("../img/project.png");
+  content: '';
+  background-image: url('../img/project.png');
   width: 50px;
   height: 50px;
   display: inline-block;
@@ -181,7 +180,7 @@ body {
   max-width: 70px;
 }
 .title {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 40px;
   margin-bottom: 50px;
 }
@@ -195,36 +194,47 @@ body {
 
 .about {
   padding: 112px 0 100px 0;
-}
+  max-height: 1140px;
+  &__body {
+  }
 
-.work {
-  background-color: #d9d9d9;
-  max-height: 1004px;
-}
-.work__image {
-  margin: 57px 0px 0px 0px;
-  position: relative;
-}
-.work__image img {
-  max-width: 100%;
-}
-.work__vector {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -50px 0 0 -50px;
-}
+  &__title {
+  }
 
+  &__text {
+  }
+
+  &__image {
+    position: relative;
+    margin: 57px 0px 0px 0px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__bg {
+  }
+
+  &__vector {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px;
+  }
+}
 .footer {
   padding: 50px 0;
   min-height: 151px;
   background-color: #34547a;
   color: white;
+  &__text {
+    font-size: 21px;
+    margin: 0px 0px 20px 0px;
+  }
+
+  &__copy {
+    font-size: 13px;
+  }
 }
-.footer__text {
-  font-size: 21px;
-  margin: 0px 0px 20px 0px;
+.container {
 }
-.footer__copy {
-  font-size: 13px;
-} /*# sourceMappingURL=style.css.map */
