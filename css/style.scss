@@ -94,9 +94,18 @@ body {
 }
 
 /*************************************************************/
+$containerWidth: 1110px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1170px;
+$pc: $containerWidth;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileSmall: 479.98px;
+
 /*************************************************************/
+
 .container {
-  max-width: 1110px;
+  max-width: $containerWidth;
   padding: 20px;
   margin: 0 auto;
 }
@@ -111,12 +120,10 @@ body {
   min-height: 70px;
   background-color: #eeeff1;
 }
-
 .design {
   margin: 260px 0px 0px 0px;
   background-color: #eeeff1;
 }
-
 .design__title {
   font-size: 48px;
   margin-bottom: 60px;
@@ -137,18 +144,17 @@ body {
 .menu__list {
   display: flex;
   justify-content: space-between;
-}
-.menu__list li {
-  position: relative;
+  li {
+    position: relative;
+  }
 }
 
 .menu__link {
   color: black;
+  &:hover {
+    text-decoration: underline;
+  }
 }
-.menu__link:hover {
-  text-decoration: underline;
-}
-
 .button {
   font-family: Roboto;
   background-color: #34547a;
@@ -220,17 +226,14 @@ body {
   padding: 112px 0 100px 0;
   max-height: 1140px;
 }
-
 .about__image {
   z-index: -2;
   position: relative;
   margin: 57px 0px 0px 0px;
 }
-
 .about__image img {
   max-width: 100%;
 }
-
 .about__vector {
   position: absolute;
   top: 50%;
@@ -244,28 +247,26 @@ body {
   background-color: #34547a;
   color: white;
 }
-
 .footer__text {
   font-size: 21px;
   margin: 0px 0px 20px 0px;
 }
-
 .footer__copy {
   font-size: 13px;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: $mobile) {
   .menu__list {
     margin: 50px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     text-align: center;
-  }
-  .menu__list li {
-    padding: 30px 0;
-  }
-  .menu__list a {
-    color: #000;
+    li {
+      padding: 30px 0;
+    }
+    a {
+      color: #000;
+    }
   }
   .menu {
     position: fixed;
@@ -284,49 +285,50 @@ body {
 }
 .icon-menu {
   display: none;
-}
-@media (max-width: 767.98px) {
-  .icon-menu {
+  @media (max-width: $mobile) {
     display: block;
     position: relative;
     width: 30px;
     height: 18px;
     z-index: 5;
+    @media (any-hover: none) {
+      cursor: default;
+    }
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - 1px);
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - 1px);
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - 1px);
+        transform: rotate(45deg);
+      }
+    }
   }
 }
-@media (max-width: 767.98px) and (any-hover: none) {
-  .icon-menu {
-    cursor: default;
-  }
-}
-@media (max-width: 767.98px) {
-  .icon-menu span, .icon-menu::before, .icon-menu::after {
-    content: "";
-    transition: all 0.3s ease 0s;
-    right: 0;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-  }
-  .icon-menu::before {
-    top: 0;
-  }
-  .icon-menu::after {
-    bottom: 0;
-  }
-  .icon-menu span {
-    top: calc(50% - 1px);
-  }
-  .menu-open .icon-menu span {
-    width: 0;
-  }
-  .menu-open .icon-menu::before {
-    top: calc(50% - 1px);
-    transform: rotate(-45deg);
-  }
-  .menu-open .icon-menu::after {
-    bottom: calc(50% - 1px);
-    transform: rotate(45deg);
-  }
-}/*# sourceMappingURL=style.css.map */
